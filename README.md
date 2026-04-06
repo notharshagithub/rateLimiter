@@ -4,27 +4,7 @@ A backend rate limiting module that controls access to paid external resources. 
 
 ---
 
-## Table of Contents
 
-- [Overview](#overview)
-- [Class Diagram](#class-diagram)
-- [Package Structure](#package-structure)
-- [Classes & Interfaces](#classes--interfaces)
-  - [RateLimiter (interface)](#ratelimiter-interface)
-  - [FixedWindowRateLimiter](#fixedwindowratelimiter)
-  - [SlidingWindowRateLimiter](#slidingwindowratelimiter)
-  - [RateLimitConfig](#ratelimitconfig)
-  - [RateLimitResult](#ratelimitresult)
-  - [RateLimiterFactory](#ratelimiterfactory)
-  - [RateLimiterRegistry](#ratelimiterregistry)
-  - [ExternalResourceGateway](#externalresourcegateway)
-  - [ExternalClient (interface)](#externalclient-interface)
-  - [DataEnrichmentService](#dataenrichmentservice)
-- [Design Patterns Used](#design-patterns-used)
-- [Algorithm Trade-offs](#algorithm-trade-offs)
-- [Usage Example](#usage-example)
-
----
 
 ## Overview
 
@@ -174,22 +154,4 @@ classDiagram
 ```
 
 > **Render this diagram** in any Mermaid-compatible viewer: GitHub, GitLab, VS Code (Markdown Preview Mermaid Support), or [mermaid.live](https://mermaid.live).
-
----
-
-│   └── RateLimiterRegistry.java       ← named policy store
-├── gateway/
-│   ├── ExternalResourceGateway.java   ← enforcement choke-point
-│   └── ExternalClient.java            ← client interface + exception
-├── service/
-│   └── DataEnrichmentService.java     ← example internal service
-├── tests/
-│   └── RateLimiterTests.java          ← unit + concurrency tests
-└── AppWiring.java                     ← wiring and algorithm switch demo
-```
-
----
-
----
----------------------------------------------------------------------------------------------------------------------------------------------------
 
